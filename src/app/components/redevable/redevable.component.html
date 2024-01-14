@@ -1,0 +1,59 @@
+<h3 class="ms-5 p-3 text-center">Redevable Management</h3>
+<div class="p-5">
+  <form class="form" (ngSubmit)="ngSubmit()">
+    <input
+      type="text"
+      class="form-control w-50"
+      name="nom"
+      placeholder="Nom"
+      [(ngModel)]="redevable.nom"
+    />
+    <input
+      type="text"
+      class="form-control w-50 mt-3"
+      name="prenom"
+      placeholder="Prenom"
+      [(ngModel)]="redevable.prenom"
+    />
+    <input
+      type="text"
+      class="form-control w-50 mt-3"
+      name="cin"
+      placeholder="CIN"
+      [(ngModel)]="redevable.cin"
+    />
+    <button type="submit" class="btn btn-outline-success mt-3">Add</button>
+  </form>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Cin</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let redevable of redevables">
+      <td>{{ redevable.id }}</td>
+      <td>{{ redevable.nom }}</td>
+      <td>{{ redevable.prenom }}</td>
+      <td>{{ redevable.cin }}</td>
+      <td>
+        <!-- <button
+          (click)="deleteCategorie(redevable.id)"
+          class="btn btn-outline-danger me-2"
+        > -->
+        <button>Delete</button>
+        <!-- <button
+          (click)="updateProprietaire(redevable.id)"
+          class="btn btn-outline-secondary"
+        > -->
+        <button>Update</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
