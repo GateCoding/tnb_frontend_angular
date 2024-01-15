@@ -10,11 +10,25 @@ import { UpdateRedevableComponent } from './components/update-redevable/update-r
 import { TaxeComponent } from './components/taxe/taxe.component';
 import { TerrainComponent } from './components/terrain/terrain.component';
 import { TaxeTnbComponent } from './components/taxe-tnb/taxe-tnb.component';
-import { DemandeComponent } from './demande/demande.component';
+import { DemandeComponent } from './components/demande/demande.component';
 
 @NgModule({
-  declarations: [AppComponent, RedevableComponent, UpdateRedevableComponent, TaxeComponent, TerrainComponent, TaxeTnbComponent, DemandeComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgbModule],
+  declarations: [
+    AppComponent,
+    RedevableComponent,
+    UpdateRedevableComponent,
+    TaxeComponent,
+    TerrainComponent,
+    TaxeTnbComponent,
+    DemandeComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    NgbModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
