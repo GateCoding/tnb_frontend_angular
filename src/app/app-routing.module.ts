@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RedevableComponent } from './components/redevable/redevable.component';
 // import { UpdateCategorieComponent } from './update-categorie/update-categorie.component';
-// import { ProprietaireComponent } from './proprietaire/proprietaire.component';
-// import { UpdateProprietaireComponent } from './update-proprietaire/update-proprietaire.component';
-// import { TerrainComponent } from './terrain/terrain.component';
+import { UpdateRedevableComponent } from './components/update-redevable/update-redevable.component';
+import { TaxeComponent } from './components/taxe/taxe.component';
+import { TaxeTnbComponent } from './components/taxe-tnb/taxe-tnb.component';
+import { TerrainComponent } from './components/terrain/terrain.component';
 // import { UpdateTerrainComponent } from './update-terrain/update-terrain.component';
 // import { TauxComponent } from './taux/taux.component';
 // import { UpdateTauxComponent } from './update-taux/update-taux.component';
@@ -12,12 +13,12 @@ import { RedevableComponent } from './components/redevable/redevable.component';
 
 const routes: Routes = [
   { path: 'redevable', component: RedevableComponent },
-  //   { path: 'proprietaire', component: ProprietaireComponent },
-  //   { path: 'terrain', component: TerrainComponent },
-  //   { path: 'taux', component: TauxComponent },
-  //   { path: 'taxetnb', component: TaxetnbComponent },
-  //   { path: 'update-categorie/:id', component: UpdateCategorieComponent },
-  //   { path: 'update-proprietaire/:id', component: UpdateProprietaireComponent },
+  { path: 'terrain', component: TerrainComponent },
+  // { path: 'taux', component: TauxComponent },
+  { path: 'taxe', component: TaxeComponent },
+  { path: 'taxe-terrain/:id', component: TaxeTnbComponent },
+  { path: 'update-redevable/:id', component: UpdateRedevableComponent },
+  { path: 'taxe-redevable/:cin', component: TaxeComponent },
   //   { path: 'update-terrain/:id', component: UpdateTerrainComponent },
   //   { path: 'update-taux/:id', component: UpdateTauxComponent },
 ];

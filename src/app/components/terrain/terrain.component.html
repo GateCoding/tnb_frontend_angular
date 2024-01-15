@@ -1,0 +1,28 @@
+<!-- Use *ngFor to loop through the terrains and display them in a Bootstrap-styled table -->
+<div class="container mt-4">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Surface</th>
+        <th>Redevable CIN</th>
+        <th>Categorie</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let terrain of terrains">
+        <td>{{ terrain.id }}</td>
+        <td>{{ terrain.surface }}</td>
+        <td>{{ terrain.redevablecin }}</td>
+        <td>{{ terrain.categorie?.label }}</td>
+        <button
+          (click)="viewTaxe(terrain.id)"
+          class="btn btn-outline-primary me-2"
+        >
+          View
+        </button>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -43,16 +43,18 @@
       <td>{{ redevable.prenom }}</td>
       <td>{{ redevable.cin }}</td>
       <td>
-        <!-- <button
-          (click)="deleteCategorie(redevable.id)"
+        <button
+          (click)="deleteRedevable(redevable.id)"
           class="btn btn-outline-danger me-2"
-        > -->
-        <button>Delete</button>
-        <!-- <button
-          (click)="updateProprietaire(redevable.id)"
+        >
+          Delete
+        </button>
+        <button
+          (click)="updateRedevable(redevable.id)"
           class="btn btn-outline-secondary"
-        > -->
-        <button>Update</button>
+        >
+          Update
+        </button>
       </td>
     </tr>
   </tbody>

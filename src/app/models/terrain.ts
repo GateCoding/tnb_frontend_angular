@@ -1,9 +1,8 @@
-import { Categorie } from "./categorie";
-import { Redevable } from "./redevable";
+import { Categorie } from './categorie';
 
 export class Terrain {
   id?: number;
   surface?: number;
-  redevable?: Redevable; // Marked as optional
+  redevablecin?: string; // Marked as optional
   categorie?: Categorie;
 }

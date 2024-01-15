@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Redevable } from 'src/app/models/redevable';
-import { RedevableService } from 'src/app/services/redevable.service';
+import { RedevableService } from 'src/app/services/redevable/redevable.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -28,22 +28,20 @@ export class RedevableComponent implements OnInit {
     });
   }
 
-  // deleteCategorie(id: number | undefined) {
-  //   this.redevableService.deleteRedevable(id).subscribe((data) => {
-  //     // pour ecouter les emissions d'observable
-  //     console.log(data);
-  //     Swal.fire({
-  //       icon: 'success',
-  //       title: 'Owner Deleted Successfully!',
-  //       showConfirmButton: true,
-  //       confirmButtonText: 'OK',
-  //     }).then((result) => {
-  //       if (result.isConfirmed) {
-  //         window.location.reload();
-  //       }
-  //     });
-  //   });
-  // }
+  deleteRedevable(id: number | undefined) {
+    this.redevableService.deleteRedevable(id).subscribe((data) => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Redevable Deleted Successfully!',
+        showConfirmButton: true,
+        confirmButtonText: 'OK',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.reload();
+        }
+      });
+    });
+  }
 
   createRedevable() {
     this.redevableService.createRedevable(this.redevable).subscribe(
@@ -73,11 +71,15 @@ export class RedevableComponent implements OnInit {
     );
   }
 
+  updateRedevable(id: number | undefined) {
+    this.router.navigate(['update-redevable', id]);
+  }
+
+  viewTaxe(terrainId: number) {
+    this.router.navigate(['/taxe', terrainId]);
+  }
+
   ngSubmit() {
     this.createRedevable();
   }
-
-  // updateRedevable(id: number | undefined) {
-  //   this.router.navigate(['update-redevable', id]);
-  // }
 }

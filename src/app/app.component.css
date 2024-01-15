@@ -1,0 +1,24 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+/* Add your global styles here */
+
+/* Navbar styles */
+.navbar {
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.navbar-brand img {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.nav-link {
+  margin-right: 15px; /* Adjust the margin as needed */
+}
+
+/* Container styles */
+.container {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
