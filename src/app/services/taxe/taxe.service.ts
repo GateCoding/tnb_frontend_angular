@@ -7,7 +7,7 @@ import { Taxe } from 'src/app/models/taxe';
   providedIn: 'root',
 })
 export class TaxeService {
-  private baseUrl = 'http://localhost:8085/api/taxe';
+  private baseUrl = 'http://localhost:8085/api';
 
   constructor(private httpClient: HttpClient) {}
 

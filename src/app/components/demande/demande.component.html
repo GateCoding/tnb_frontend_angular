@@ -1,0 +1,33 @@
+
+
+    <div class="container mt-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Demande ID</th>
+                    <th scope="col">CIN Redevable</th>
+                    <th scope="col">Taxe ID</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let demande of demandes">
+                    <th scope="row">{{ demande.id }}</th>
+                    <td>{{ demande.id }}</td>
+                    <td>{{ demande.redevable }}</td>
+                    <td>{{ demande.taxe }}</td>
+                    <td>
+                        <!-- Champ pour modifier le message manuellement -->
+                        <input [(ngModel)]="demande.reponseDemande" class="form-control" [value]="demande.reponseDemande"/>
+                    </td>
+                    <td>
+                        <!-- Ajouter les boutons "Accepter" et "Rejeter" -->
+                        <button (click)="validerDemande(demande)" class="btn btn-success">Accepter</button>
+                        <button (click)="rejeterDemande(demande)" class="btn btn-danger">Rejeter</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

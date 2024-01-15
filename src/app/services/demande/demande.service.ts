@@ -11,16 +11,27 @@ export class DemandeService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getDemandessList(cin: string | undefined): Observable<Demande[]> {
-    return this.httpClient.get<Demande[]>(`${this.baseUrl}/redevable/${cin}`);
+  getDemandesList(): Observable<Demande[]> {
+    return this.httpClient.get<Demande[]>(`${this.baseUrl}`);
   }
-  getDemandes(): Observable<Demande[]> {
-    // Appeler l'API pour récupérer la liste des demandes
-    return this.httpClient.get<Demande[]>(`${this.baseUrl}/liste`);
+  modifierMessageDemande(demande: Demande): Observable<any> {
+    const url = `${this.baseUrl}/modifierMessageDemande/${demande.id}`;
+    return this.httpClient.put(url, demande.reponseDemande);
   }
 
-  traiterDemandePaiement(demande: Demande): Observable<any> {
-    // Appeler l'API pour traiter la demande
-    return this.httpClient.post(`${this.baseUrl}/traiter`, demande);
+  postDemande(demande: Demande): Observable<Object> {
+    return this.httpClient.post(`http://localhost:8085/publish`, demande);
   }
+  //   getRedevablesList(): Observable<Redevable[]> {
+  //     return this.httpClient.get<Redevable[]>(`${this.baseUrl}/all`);
+  //   }
+  //   getDemandes(): Observable<Demande[]> {
+  //     // Appeler l'API pour récupérer la liste des demandes
+  //     return this.httpClient.get<Demande[]>(`${this.baseUrl}/liste`);
+  //   }
+
+  //   traiterDemandePaiement(demande: Demande): Observable<any> {
+  //     // Appeler l'API pour traiter la demande
+  //     return this.httpClient.post(`${this.baseUrl}/traiter`, demande);
+  //   }
 }
