@@ -1,1 +1,24 @@
-<p>taxe-tnb works!</p>
+<div class="container mt-4">
+  <div class="row mt-4">
+    <div class="col-md-4" *ngFor="let taxe of taxes || []">
+      <div class="card border-primary mb-4">
+        <div class="card-body">
+          <h5 class="card-title border-bottom pb-2">
+            Terrain ID: {{ taxe.terrain?.id }}
+          </h5>
+          <p class="card-text mb-2">Redevable CIN: {{ taxe.redevablecin }}</p>
+          <h5 class="card-title border-bottom pb-2">Taxe ID: {{ taxe.id }}</h5>
+          <p class="card-text mb-2">Pay: {{ taxe.pay ? "Yes" : "No" }}</p>
+          <p class="card-text mb-2">Cost: {{ taxe.cost }}</p>
+          <!-- <button
+            *ngIf="!taxe.pay"
+            (click)="payerTaxe(taxe.id)"
+            class="btn btn-success mt-3"
+          > -->
+          <button *ngIf="!taxe.pay" class="btn btn-success mt-3">Payer</button>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+</div>

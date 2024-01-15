@@ -20,8 +20,7 @@ export class TerrainComponent implements OnInit {
     this.router.navigate(['/terrain']);
   }
 
-  viewTaxe(terrainId: number) {
-    // Naviguer vers la page "Taxe" avec l'ID du terrain
+  viewTaxe(terrainId: number | undefined) {
     this.router.navigate(['/taxe-terrain', terrainId]);
   }
 

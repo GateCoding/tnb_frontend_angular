@@ -16,7 +16,7 @@ export class TerrainService {
     return this.httpClient.get<Terrain[]>(`${this.baseUrl}/all`);
   }
 
-  getTerrainById(id: number | undefined): Observable<Terrain[]> {
-    return this.httpClient.get<Terrain[]>(`${this.baseUrl}/find/${id}`);
+  getTerrainById(id: number | undefined): Observable<Terrain> {
+    return this.httpClient.get<Terrain>(`${this.baseUrl}/find/${id}`);
   }
 }

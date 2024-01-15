@@ -75,9 +75,9 @@ export class RedevableComponent implements OnInit {
     this.router.navigate(['update-redevable', id]);
   }
 
-  viewTaxe(terrainId: number) {
-    this.router.navigate(['/taxe', terrainId]);
-  }
+  // viewTaxe(terrainId: number) {
+  //   this.router.navigate(['/taxe', terrainId]);
+  // }
 
   ngSubmit() {
     this.createRedevable();

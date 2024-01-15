@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Taxe } from 'src/app/models/taxe';
+import { Terrain } from 'src/app/models/terrain';
 import { TaxeService } from 'src/app/services/taxe/taxe.service';
 import { TerrainService } from 'src/app/services/terrain/terrain.service';
 
@@ -42,7 +43,7 @@ export class TaxeTnbComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.terrainService.getTerrainById(this.id).subscribe((data) => {
-      this.taxes = data;
+      this.taxes = data.taxes;
     });
   }
 }
