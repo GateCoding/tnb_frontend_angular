@@ -1,0 +1,27 @@
+/* Style pour la liste des demandes */
+.demande-details {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style pour les boutons */
+button {
+    margin-top: 5px;
+    cursor: pointer;
+    background-color: #4caf50;
+    /* Couleur verte pour le bouton de validation */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+button.rejeter {
+    background-color: #f44336;
+    /* Couleur rouge pour le bouton de rejet */
+}
